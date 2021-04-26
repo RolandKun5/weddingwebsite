@@ -1,0 +1,352 @@
+/* =============================
+
+        VARIABLES
+
+============================= */
+
+:root{    
+    --primary-font-family: 'Great Vibes', cursive;
+    --secondary-font-family: 'Libre Baskerville', serif;
+    --tertiary-font-family: 'Mulish', sans-serif;
+
+    --default-text-color: #444349;
+    --alternate-text-color: #d2ba87;
+    --tagline-and-date-color: hsla(0,0%,100%,.9);
+
+    --dark-background: hsla(100,0%,0%,.6);
+    --foter-background: #606060;
+    --background-pattern: url("https://orange.codeberryschool.com/content/images/project-assets/wedding-landing-background.png");
+
+    --header-image: url("https://orange.codeberryschool.com/content/images/project-assets/wedding-landing-cover.jpg");
+
+    --link-color: #bd806e;
+    --link-hover-color: #eda087;   
+
+}
+
+
+/* =============================
+
+        GENERAL STYLE
+
+============================= */
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--tertiary-font-family);
+}
+
+main{    
+    background-image: var(--background-pattern);
+}
+
+main article{    
+    color: var(--default-text-color);
+}
+
+main article:nth-child(even){    
+    background: var(--dark-background);
+    color: var(--alternate-text-color);
+}
+
+h1,h2,h3,p,ul,li,img{
+    margin-bottom: 1.5rem;
+}
+
+h1{
+    font-size: 4rem;
+    font-family: var(--primary-font-family);
+    color: var(--alternate-text-color);
+}
+
+h2{
+    font-size: 3rem;
+    font-family: var(--primary-font-family);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+h3{
+    font-size: 1.5rem;
+    font-family: var(--secondary-font-family);
+    font-weight: bold;
+}
+
+a{
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover{
+    color: var(--link-hover-color);
+}
+
+a,p,li{    
+    font-weight: 600;
+    letter-spacing: 0.0625rem;
+}
+
+#tagline,#date{
+    font-family: var(--secondary-font-family);
+    color: var(--tagline-and-date-color);
+    font-size: 1.5rem;
+    letter-spacing: 0.0625rem;
+}
+
+img{
+    height: 8rem;
+}
+
+#locations-container,#programs-container,#gifts-container,#faq-container,#contact-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 1rem 2.5rem 0.5rem; 
+}
+
+#locations-content-container,#faq-content-container,#contact-content-container{ 
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* =============================
+
+        HOME(HEADER) STYLES
+
+============================= */
+
+header{
+    height: 100vh;
+    background: var(--header-image) 70% center/cover fixed;
+    display: flex;
+    align-items: center;
+}
+
+#home-content-container{
+    width: 100%;
+    background-color: var(--dark-background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#tagline{
+    margin: 1rem 0rem 1rem 0rem;
+}
+
+#tagline::after{
+    display: block;
+    content: "";
+    background-color: var(--tagline-and-date-color);
+    width: 12rem;
+    height: 0.0625rem;
+    margin: 0.5rem auto;
+}
+
+#date{
+    margin-bottom: 1rem;
+}
+
+#date::before,#date:after{
+    display: inline-block;
+    content: "";
+    background-color: var(--tagline-and-date-color);
+    width: 2rem;
+    height: 0.0625rem;
+    vertical-align: middle;
+    margin: 0 0.5rem;
+}
+
+@media(min-width:992px){
+    header{
+        justify-content: center;
+    }
+
+    #home-content-container{
+        width: 60%;
+    }
+}
+
+@media(min-width:1200px){
+    header{
+        background: var(--header-image) center fixed;
+    }
+
+    #home-content-container{
+        width: 40%;
+        height: 30vh;
+        justify-content: center;
+    }
+
+    #tagline{
+        text-transform: uppercase;
+    }
+}
+
+/* =============================
+
+        LOCATIONS STYLES
+
+============================= */
+
+#locations-container{
+    text-align: center;
+}
+
+.locations-content-box p{
+    margin-bottom: 0.5rem;
+}
+
+.locations-content-box{
+    margin-bottom: 2rem;
+}
+
+.locations-content-box::after{
+    display: block;
+    content: "";
+    background-color: var(--default-text-color);
+    width: 8rem;
+    height: 0.1875rem;
+    margin: 2rem auto 0.5rem auto;
+}
+
+@media (min-width:768px){
+    #locations-content-container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .locations-content-box::after{
+        display: none;
+    }
+}
+
+@media(min-width:1200px){
+    #locations-content-container{
+        justify-content: space-around;
+    }
+}
+
+/* =============================
+
+        PROGRAMS STYLES
+
+============================= */
+
+#programs-container p{
+    font-style: italic;
+}
+
+#programs-list li{
+    margin-bottom: 1rem;
+}
+
+/* =============================
+
+        GIFTS STYLES
+
+============================= */
+
+#gifts-container{
+    text-align: center;
+}
+
+#gifts-container p{
+    font-size: 1.2rem;
+}
+
+/* =============================
+
+        FAQ STYLES
+
+============================= */
+
+#faq-container h3{
+    font-weight: unset;
+    text-align: center;
+}
+
+#faq-container p:nth-child(odd){
+    font-weight: lighter;
+}
+
+.faq-content-box::after{
+    display: block;
+    content: "";
+    background-color: var(--alternate-text-color);
+    width: 12rem;
+    height: 0.1875rem;
+    margin: 2rem auto 2rem auto;
+}
+
+.faq-content-box:last-child::after{
+    margin-bottom: auto;
+}
+
+@media(min-width:992px){
+    .faq-content-box{
+        width: 80%;
+    }
+}
+
+@media(min-width:1200px){
+    #faq-content-container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .faq-content-box{
+        height: 40vh;
+        width: 25vw;
+    }
+
+    .faq-content-box::after{
+        display: none;
+    }
+}
+
+/* =============================
+
+        CONTACT STYLES
+
+============================= */
+
+#contact-content-container p{
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* =============================
+
+        FOOTER STYLES
+
+============================= */
+
+footer{
+    background-color: var(--dark-background);
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+footer p{
+    width: 90%;
+    color: var(--tagline-and-date-color);
+    font-weight: lighter;
+    line-height: 1rem;
+    text-align: center;
+    margin: 0 1rem;
+}
+
+@media(min-width:1200px){
+    footer{
+        height: 7vh;
+    }
+}
