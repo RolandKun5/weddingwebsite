@@ -1,1 +1,1 @@
-# weddingwebsite
+# Reszponzív esküvői weboldal.
